@@ -13,12 +13,7 @@ contract AGGToken is ERC20Pausable, Ownable, TimeLock {
         uint256 _initSupply
     ) public ERC20(_name, _symbol) {
         uint256 initSupply = _initSupply * (10**uint256(_decimals));
-        mint(initSupply);
-    }
-
-    function mint(uint256 _amount) public onlyOwner returns (bool) {
-        _mint(msg.sender, _amount);
-        return true;
+        _mint(msg.sender, initSupply);
     }
 
     function burn(uint256 _amount) public onlyOwner {

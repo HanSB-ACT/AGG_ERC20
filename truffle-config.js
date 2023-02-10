@@ -17,15 +17,15 @@ module.exports = {
       network_id: "*" // Match any network id
     },
     mainnet: {
-      provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://mainnet.infura.io/v3/${process.env.INFURA_KEY}`),
+      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, `https://mainnet.infura.io/v3/${process.env.INFURA_KEY}`),
       network_id: 1,
-      gas: 6000000,
-      confirmations: 2,
-      timeoutBlocks: 200,
+      // gas: 6000000,
+      // confirmations: 2,
+      // timeoutBlocks: 200,
       skipDryRun: true
     },
     goerli: {
-      provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://goerli.infura.io/v3/${process.env.INFURA_KEY}`),
+      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, `https://goerli.infura.io/v3/${process.env.INFURA_KEY}`),
       network_id: 5,
       //gas: 5500000,
       //confirmations: 10,
@@ -34,7 +34,7 @@ module.exports = {
       skipDryRun: true
     },
     polygontest: {
-      provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://rpc-mumbai.maticvigil.com`),
+      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, `https://rpc-mumbai.maticvigil.com`),
       network_id: 80001,
       confirmations: 2,
       timeoutBlocks: 200,
